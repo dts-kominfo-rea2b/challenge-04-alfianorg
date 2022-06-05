@@ -8,7 +8,11 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index = -1) => {
+  dates = dates.map(date => new Date(date).getTime() / 1000);
+  const epochTime = index === -1 ? dates : dates.splice(index, 1);
+  return epochTime.sort((a, b) => a - b).join('-');
+}
 
 // ! JANGAN DIMODIFIKASI
 (() => {
